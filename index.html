@@ -1,0 +1,1344 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gramática JLPT N5 e N4</title>
+<style>
+:root{
+  --bg:#0f172a;
+  --card:#172033;
+  --text:#f8fafc;
+  --muted:#b6c2d2;
+  --line:rgba(255,255,255,.14);
+  --accent:#38bdf8;
+  --accent2:#a78bfa;
+  --n5:#34d399;
+  --n4:#38bdf8;
+  --warn:#fbbf24;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:
+    radial-gradient(circle at top left,rgba(56,189,248,.18),transparent 28rem),
+    radial-gradient(circle at top right,rgba(167,139,250,.18),transparent 28rem),
+    var(--bg);
+  color:var(--text);
+  line-height:1.65;
+}
+.wrap{max-width:1180px;margin:auto;padding:24px}
+header{padding-top:44px}
+h1{font-size:clamp(34px,6vw,70px);line-height:1.03;margin:12px 0;letter-spacing:-.05em}
+h2{font-size:21px;line-height:1.25;margin:10px 0}
+.lead{font-size:clamp(17px,2vw,22px);max-width:900px;color:#dbeafe}
+.badge,.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:rgba(255,255,255,.06);
+  padding:7px 11px;
+  color:#dbeafe;
+  font-size:14px;
+}
+.notice{
+  margin-top:18px;
+  border:1px solid rgba(251,191,36,.35);
+  background:rgba(251,191,36,.09);
+  color:#fde68a;
+  border-radius:18px;
+  padding:14px 16px;
+}
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin:24px 0;
+}
+.stat{
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.055);
+  border-radius:20px;
+  padding:16px;
+}
+.stat b{display:block;font-size:30px}
+.toolbar{
+  position:sticky;
+  top:0;
+  z-index:20;
+  backdrop-filter:blur(14px);
+  background:rgba(15,23,42,.86);
+  border-block:1px solid var(--line);
+}
+.tools{
+  max-width:1180px;
+  margin:auto;
+  padding:13px 24px;
+  display:grid;
+  grid-template-columns:1fr auto auto auto;
+  gap:10px;
+}
+input,select,button{
+  font:inherit;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:rgba(255,255,255,.07);
+  color:var(--text);
+  padding:11px 13px;
+}
+button{cursor:pointer}
+button.primary{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#07101f;
+  font-weight:800;
+  border:0;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+  gap:18px;
+  margin-top:16px;
+}
+.card{
+  border:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.035));
+  border-radius:24px;
+  padding:19px;
+  box-shadow:0 18px 45px rgba(0,0,0,.28);
+}
+.N5{background:rgba(52,211,153,.16);color:#bbf7d0}
+.N4{background:rgba(56,189,248,.16);color:#bae6fd}
+.label{color:var(--accent);font-weight:800;margin-top:12px}
+.pattern{
+  font-size:18px;
+  padding:11px 12px;
+  background:rgba(2,6,23,.45);
+  border:1px solid var(--line);
+  border-radius:14px;
+  font-family:"Yu Gothic","Hiragino Sans","Noto Sans JP",sans-serif;
+}
+details{margin-top:12px}
+summary{cursor:pointer;color:#bfdbfe;font-weight:800}
+ul{padding:0;list-style:none;display:grid;gap:10px}
+li{
+  background:rgba(15,23,42,.58);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:11px;
+}
+.jp{
+  font-size:18px;
+  font-family:"Yu Gothic","Hiragino Sans","Noto Sans JP",sans-serif;
+}
+.pt{color:var(--muted);margin-top:4px}
+.note{
+  border-left:3px solid var(--warn);
+  background:rgba(251,191,36,.08);
+  color:#fde68a;
+  border-radius:10px;
+  padding:10px;
+  margin-top:10px;
+}
+footer{
+  color:#9fb0c8;
+  border-top:1px solid var(--line);
+  margin-top:45px;
+  padding-bottom:45px;
+}
+code{
+  background:rgba(255,255,255,.08);
+  padding:2px 5px;
+  border-radius:6px;
+}
+@media(max-width:760px){
+  .tools{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  .wrap,header{padding-inline:16px}
+}
+@media print{
+  body{background:white;color:#111827}
+  .toolbar,.notice,.primary{display:none}
+  .card{break-inside:avoid;box-shadow:none;background:white}
+  .pt{color:#333}
+}
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <span class="badge">日本語 • JLPT • N5 + N4</span>
+  <h1>Gramática JLPT N5 e N4</h1>
+  <p class="lead">
+    Guia interativo em português com estruturas essenciais, formação, explicação e frases longas em japonês com tradução.
+  </p>
+  <div class="notice">
+    <b>Nota:</b> o JLPT não publica uma lista oficial fechada de gramática. Esta página usa uma lista ampla e prática baseada nos pontos normalmente estudados para N5 e N4.
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b id="total">0</b><span>estruturas</span></div>
+    <div class="stat"><b id="n5">0</b><span>N5</span></div>
+    <div class="stat"><b id="n4">0</b><span>N4</span></div>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="tools">
+    <input id="q" type="search" placeholder="Buscar: は, ている, obrigação, porque, conselho...">
+    <select id="level">
+      <option value="all">Todos</option>
+      <option value="N5">N5</option>
+      <option value="N4">N4</option>
+    </select>
+    <button id="toggle">Abrir exemplos</button>
+    <button id="copy" class="primary">Copiar dados</button>
+  </div>
+</div>
+
+<main class="wrap">
+  <p id="result"></p>
+  <section id="cards" class="grid"></section>
+</main>
+
+<footer class="wrap">
+  <p><b>GitHub Pages:</b> salve este arquivo como <code>index.html</code>, envie para a raiz do repositório e ative em <code>Settings → Pages</code>.</p>
+</footer>
+
+<script>
+const GRAMMAR = [
+  {
+    level:"N5",
+    title:"は — tópico",
+    pattern:"A は B です",
+    meaning:"quanto a A; falando de A",
+    formation:"Substantivo ou tema + は + comentário.",
+    explanation:"Marca o assunto principal da frase. Em japonês, primeiro se apresenta o tema e depois se diz algo sobre ele. Como partícula, は lê-se wa.",
+    examples:[
+      ["私は毎朝六時に起きて、学校へ行く前に日本語の単語を少し復習します。","Eu acordo às seis todos os dias e reviso um pouco de vocabulário japonês antes de ir para a escola."],
+      ["この町は静かですが、駅の近くには新しい店がたくさんあります。","Esta cidade é tranquila, mas perto da estação há muitas lojas novas."],
+      ["田中さんは日本語の先生で、週末にも学生の質問に丁寧に答えてくれます。","Tanaka é professor de japonês e responde com atenção às perguntas dos alunos até no fim de semana."]
+    ]
+  },
+  {
+    level:"N5",
+    title:"が — sujeito ou foco",
+    pattern:"A が B",
+    meaning:"quem; o que; sujeito focalizado",
+    formation:"Substantivo + が + predicado.",
+    explanation:"Marca o sujeito ou a informação nova/focalizada. É muito comum com existência, gostos, habilidades e respostas para perguntas como 'quem?' ou 'o quê?'.",
+    examples:[
+      ["教室の外で大きな音がしたので、学生たちはみんな窓を見ました。","Houve um som alto fora da sala, então todos os alunos olharam para a janela."],
+      ["私は料理が好きですが、忙しい日は簡単なカレーしか作りません。","Eu gosto de cozinhar, mas em dias corridos faço só um curry simples."],
+      ["駅の前に新しい図書館ができたので、町の人たちは喜んでいます。","Uma nova biblioteca foi construída em frente à estação, então as pessoas da cidade estão felizes."]
+    ]
+  },
+  {
+    level:"N5",
+    title:"です — cópula polida",
+    pattern:"A は B です",
+    meaning:"é; está",
+    formation:"Substantivo/な-adjetivo + です; い-adjetivo + です.",
+    explanation:"Forma polida básica para dizer que algo é ou está de certo modo. Com い-adjetivos, です apenas dá polidez.",
+    examples:[
+      ["こちらは私の友達の山田さんで、大学で経済を勉強している学生です。","Esta é minha amiga Yamada, estudante que estuda economia na universidade."],
+      ["今日の試験は少し難しいですが、毎日練習した人にはいい復習です。","A prova de hoje é um pouco difícil, mas é boa revisão para quem praticou todos os dias."],
+      ["この部屋は広くて明るいので、午後に日本語を勉強する場所として便利です。","Este quarto é amplo e claro, por isso é conveniente para estudar japonês à tarde."]
+    ]
+  },
+  {
+    level:"N5",
+    title:"ではありません／じゃありません",
+    pattern:"A は B ではありません",
+    meaning:"não é; não está",
+    formation:"Substantivo/な-adjetivo + ではありません. Forma conversacional: じゃありません.",
+    explanation:"Forma negativa polida de です. ではありません é mais formal; じゃありません é mais comum na fala.",
+    examples:[
+      ["このかばんは私のではありませんから、受付で誰のものか聞いてみます。","Esta bolsa não é minha, então vou perguntar na recepção de quem ela é."],
+      ["今日は休みではありませんが、午後の授業は先生の都合でありません。","Hoje não é feriado, mas não há aula à tarde por causa do professor."],
+      ["あの人は医者じゃありませんが、病院で働いている親切な人です。","Aquela pessoa não é médica, mas é uma pessoa gentil que trabalha no hospital."]
+    ]
+  },
+  {
+    level:"N5",
+    title:"か — pergunta",
+    pattern:"〜ですか／〜ますか",
+    meaning:"?; será que...?",
+    formation:"Frase polida + か.",
+    explanation:"Transforma uma frase em pergunta. Em japonês formal, muitas vezes か já basta e o ponto de interrogação não é necessário.",
+    examples:[
+      ["明日の朝、駅の前で七時半に友達と会いますか。","Amanhã de manhã você vai encontrar seu amigo em frente à estação às sete e meia?"],
+      ["この漢字の読み方が分かりますか、それとも辞書で一緒に調べましょうか。","Você sabe a leitura deste kanji ou vamos procurar juntos no dicionário?"],
+      ["日本語の宿題はもう終わりましたか、まだ少し残っていますか。","Você já terminou a lição de japonês ou ainda resta um pouco?"]
+    ]
+  },
+  {
+    level:"N5",
+    title:"の — posse e ligação",
+    pattern:"A の B",
+    meaning:"B de A; B relacionado a A",
+    formation:"Substantivo + の + substantivo.",
+    explanation:"Liga dois substantivos. Pode indicar posse, origem, autor, tipo, assunto, material ou relação.",
+    examples:[
+      ["これは私の姉の日本語の教科書で、古いですが例文が分かりやすいです。","Este é o livro de japonês da minha irmã; é antigo, mas os exemplos são fáceis."],
+      ["東京の大学の図書館には、外国語の本がたくさんあります。","Na biblioteca da universidade de Tóquio há muitos livros de línguas estrangeiras."],
+      ["先生の説明の後で、学生たちは文法の問題をもう一度解きました。","Depois da explicação do professor, os alunos resolveram novamente os exercícios de gramática."]
+    ]
+  },
+  {
+    level:"N5",
+    title:"も — também",
+    pattern:"A も",
+    meaning:"também; até; também não",
+    formation:"Substantivo + も. Em negativo: A も〜ない.",
+    explanation:"Substitui は ou が quando você quer dizer 'também'. Com interrogativos e negativo forma 何も〜ない, 誰も〜ない.",
+    examples:[
+      ["私も来月の日本語能力試験を受けるので、毎晩文法を復習しています。","Eu também vou fazer o JLPT no mês que vem, então reviso gramática todas as noites."],
+      ["この店は安いですし、料理もおいしいですから、昼休みによく行きます。","Esta loja é barata e a comida também é gostosa, por isso vou lá no almoço."],
+      ["雨の日は公園に人があまりいませんし、子どももほとんど遊んでいません。","Em dias de chuva há poucas pessoas no parque e quase nenhuma criança brincando."]
+    ]
+  },
+  {
+    level:"N5",
+    title:"と — e, com, citação",
+    pattern:"A と B／人 と V／〜と言います",
+    meaning:"e; com; dizer que",
+    formation:"Substantivo + と + substantivo; pessoa + と + verbo; frase + と言う.",
+    explanation:"Une itens de lista fechada, indica companhia ou introduz fala, nome ou pensamento.",
+    examples:[
+      ["日曜日に母と父と一緒に電車で京都へ行って、古いお寺を見ました。","No domingo fui de trem a Kyoto com meus pais e vi templos antigos."],
+      ["私は友達と図書館で会って、来週の発表について二時間ぐらい話しました。","Encontrei um amigo na biblioteca e conversamos duas horas sobre a apresentação."],
+      ["先生は『毎日少しずつ勉強することが大切です』と言いました。","O professor disse que é importante estudar um pouco todos os dias."]
+    ]
+  },
+  {
+    level:"N5",
+    title:"や／など — lista incompleta",
+    pattern:"A や B など",
+    meaning:"A, B e coisas assim",
+    formation:"Substantivo + や + substantivo + など.",
+    explanation:"Lista exemplos sem dizer que são os únicos. と lista de forma fechada; や deixa a ideia de 'entre outros'.",
+    examples:[
+      ["週末にはスーパーで野菜や魚などを買って、家で簡単な料理を作ります。","No fim de semana compro legumes, peixe e coisas assim e cozinho em casa."],
+      ["机の上には教科書やノートや辞書などが置いてあります。","Em cima da mesa há livros, cadernos, dicionários e coisas assim."],
+      ["休みの日には映画や音楽などを楽しみながら、日本語の表現も覚えています。","Nos dias de folga, aproveito filmes, música e coisas assim enquanto aprendo expressões japonesas."]
+    ]
+  },
+  {
+    level:"N5",
+    title:"これ／それ／あれ／どれ",
+    pattern:"これ・それ・あれ・どれ",
+    meaning:"isto; isso; aquilo; qual",
+    formation:"Usados sozinhos como substantivos demonstrativos.",
+    explanation:"これ está perto de quem fala; それ perto de quem ouve; あれ longe dos dois; どれ pergunta 'qual?'.",
+    examples:[
+      ["これは昨日駅の近くで買った日本語の文法の本です。","Isto é o livro de gramática japonesa que comprei ontem perto da estação."],
+      ["それは先生が授業で使った大切なプリントですから、なくさないでください。","Isso é um material importante que o professor usou na aula, então não perca."],
+      ["机の上に三つの辞書がありますが、あなたが使いたいものはどれですか。","Há três dicionários na mesa, mas qual você quer usar?"]
+    ]
+  },
+  {
+    level:"N5",
+    title:"この／その／あの／どの",
+    pattern:"この N・その N・あの N・どの N",
+    meaning:"este; esse; aquele; qual",
+    formation:"この/その/あの/どの + substantivo.",
+    explanation:"Usados antes de substantivos. Diferente de これ/それ/あれ, eles precisam acompanhar um nome.",
+    examples:[
+      ["この新しいノートは漢字の練習に使うつもりです。","Este caderno novo eu pretendo usar para praticar kanji."],
+      ["その赤いかばんは山田さんのものですから、受付に持って行ってください。","Essa bolsa vermelha é da Yamada, então leve-a à recepção."],
+      ["どの電車に乗れば、約束の時間までに新宿駅に着きますか。","Em qual trem devo entrar para chegar a Shinjuku até o horário combinado?"]
+    ]
+  },
+  {
+    level:"N5",
+    title:"ここ／そこ／あそこ／どこ",
+    pattern:"ここ・そこ・あそこ・どこ",
+    meaning:"aqui; aí; ali/lá; onde",
+    formation:"Usados como substantivos de lugar.",
+    explanation:"Indicam lugares conforme a distância em relação a quem fala e quem ouve. どこ pergunta localização.",
+    examples:[
+      ["ここは静かで机も広いので、午後に宿題をするのにちょうどいい場所です。","Aqui é silencioso e a mesa é grande, ideal para fazer a lição à tarde."],
+      ["そこに置いてある白い箱の中に、昨日使った資料が入っています。","Dentro da caixa branca aí estão os materiais que usamos ontem."],
+      ["すみません、駅の近くにある安いホテルはどこですか。","Com licença, onde fica o hotel barato perto da estação?"]
+    ]
+  },
+  {
+    level:"N5",
+    title:"ある／いる — existência",
+    pattern:"N が あります／います",
+    meaning:"há; existe; tem",
+    formation:"Coisas, plantas e lugares + あります. Pessoas e animais + います.",
+    explanation:"ある é usado para coisas inanimadas e plantas; いる para pessoas e animais. Em português, muitas vezes traduzimos como 'tem'.",
+    examples:[
+      ["駅の近くに小さな本屋がありますが、日本語の教材は意外と多いです。","Perto da estação há uma pequena livraria, mas há muitos materiais de japonês."],
+      ["公園の木の下に黒い猫がいて、子どもたちが静かに見ています。","Há um gato preto debaixo da árvore do parque e as crianças olham em silêncio."],
+      ["私の部屋には机とベッドと古いパソコンがあります。","No meu quarto há uma mesa, uma cama e um computador antigo."]
+    ]
+  },
+  {
+    level:"N5",
+    title:"に — lugar de existência",
+    pattern:"Lugar に N が あります／います",
+    meaning:"em; no local há",
+    formation:"Lugar + に + N + が + ある/いる.",
+    explanation:"Quando a frase fala onde algo existe, に marca o local. Para ação realizada no local, usa-se で.",
+    examples:[
+      ["教室に新しい学生が三人いますから、今日は自己紹介をしましょう。","Há três novos alunos na sala, então vamos fazer apresentações hoje."],
+      ["机の上に昨日先生からもらったプリントがあります。","Em cima da mesa está o material que recebi do professor ontem."],
+      ["駅の前に大きなバス停があるので、初めて来た人にも分かりやすいです。","Há um grande ponto de ônibus em frente à estação, então é fácil para visitantes."]
+    ]
+  },
+  {
+    level:"N5",
+    title:"で — lugar da ação",
+    pattern:"Lugar で V",
+    meaning:"em/no/na onde se faz ação",
+    formation:"Lugar + で + verbo de ação.",
+    explanation:"Marca o local onde uma ação acontece. Não confunda com に de existência.",
+    examples:[
+      ["私は毎週土曜日に図書館で日本語の文法を二時間ぐらい勉強します。","Estudo gramática japonesa por cerca de duas horas na biblioteca aos sábados."],
+      ["昨日、駅の近くの店で友達と昼ご飯を食べてから、映画を見に行きました。","Ontem almocei com um amigo perto da estação e depois fomos ao cinema."],
+      ["学校の教室で先生が新しい漢字の書き方をゆっくり説明しました。","Na sala, o professor explicou devagar como escrever os novos kanji."]
+    ]
+  },
+  {
+    level:"N5",
+    title:"へ — direção",
+    pattern:"Lugar へ 行く／来る／帰る",
+    meaning:"para; em direção a",
+    formation:"Lugar + へ + verbo de movimento.",
+    explanation:"Marca direção do movimento. Como partícula, へ lê-se e. に também pode marcar destino, mas へ enfatiza direção.",
+    examples:[
+      ["来月、友達と一緒に新幹線で大阪へ行く予定です。","No mês que vem pretendo ir a Osaka de shinkansen com um amigo."],
+      ["授業が終わったら、すぐ家へ帰って明日のテストの勉強をします。","Quando a aula terminar, vou direto para casa estudar para a prova."],
+      ["先生は午前中に学校へ来て、午後は大学の会議に出席しました。","O professor veio à escola de manhã e à tarde participou de uma reunião."]
+    ]
+  },
+  {
+    level:"N5",
+    title:"を — objeto direto",
+    pattern:"N を V",
+    meaning:"marcador do objeto",
+    formation:"Substantivo + を + verbo transitivo.",
+    explanation:"Marca aquilo que recebe diretamente a ação: ler algo, comer algo, comprar algo, escrever algo. Como partícula, を lê-se o.",
+    examples:[
+      ["私は毎晩寝る前に日本語の短い文章を声に出して読みます。","Todas as noites leio textos curtos em japonês em voz alta antes de dormir."],
+      ["昨日スーパーで牛乳とパンを買って、家で簡単な朝ご飯を作りました。","Ontem comprei leite e pão no mercado e fiz um café simples em casa."],
+      ["先生は黒板に新しい漢字を書いて、その読み方をゆっくり説明しました。","O professor escreveu novos kanji no quadro e explicou as leituras devagar."]
+    ]
+  },
+  {
+    level:"N5",
+    title:"から／まで",
+    pattern:"A から B まで",
+    meaning:"de A até B",
+    formation:"Tempo/lugar + から; tempo/lugar + まで.",
+    explanation:"から marca ponto inicial; まで marca ponto final. Pode ser tempo, lugar, página, sequência ou distância.",
+    examples:[
+      ["月曜日から金曜日まで、私は毎日朝九時から午後三時まで学校で勉強します。","De segunda a sexta estudo na escola das nove às três."],
+      ["駅から大学まで歩いて十五分ぐらいかかりますが、道は分かりやすいです。","Da estação até a universidade leva quinze minutos a pé, mas o caminho é fácil."],
+      ["一ページから十ページまで読んで、分からない言葉をノートに書いてください。","Leia da página um à dez e escreva as palavras desconhecidas no caderno."]
+    ]
+  },
+  {
+    level:"N5",
+    title:"までに — prazo",
+    pattern:"Tempo までに V",
+    meaning:"até; no máximo até",
+    formation:"Tempo/prazo + までに + ação concluída.",
+    explanation:"まで indica continuidade até um ponto; までに indica prazo-limite para completar uma ação.",
+    examples:[
+      ["明日の朝九時までに作文を書いて、先生にメールで送らなければなりません。","Tenho que escrever a redação e enviar ao professor até amanhã às nove."],
+      ["試験の日までに、N5の文法をもう一度全部復習したいです。","Quero revisar toda a gramática N5 até o dia da prova."],
+      ["図書館が閉まる六時までに、この本を返してください。","Devolva este livro até as seis, quando a biblioteca fecha."]
+    ]
+  },
+  {
+    level:"N5",
+    title:"だけ — somente",
+    pattern:"N／V辞書形 だけ",
+    meaning:"apenas; somente",
+    formation:"Substantivo + だけ; verbo dicionário + だけ.",
+    explanation:"Limita a informação a uma coisa, pessoa, quantidade ou ação. Diferente de しか, não exige verbo negativo.",
+    examples:[
+      ["今日は時間がありませんから、漢字を十個だけ覚えてから寝ます。","Hoje não tenho tempo, então vou memorizar só dez kanji antes de dormir."],
+      ["この部屋では日本語だけ話してくださいと先生が言いました。","O professor disse para falar apenas japonês nesta sala."],
+      ["朝ご飯はコーヒーだけでしたが、昼はしっかり食べるつもりです。","O café da manhã foi só café, mas pretendo comer bem no almoço."]
+    ]
+  },
+
+  {
+    level:"N5",
+    title:"い形容詞",
+    pattern:"高い・安い・難しい",
+    meaning:"adjetivos terminados em い",
+    formation:"い-adjetivo + substantivo; い-adjetivo + です.",
+    explanation:"い-adjetivos flexionam diretamente: 高い, 高くない, 高かった, 高くなかった. Não use な antes do substantivo.",
+    examples:[
+      ["この新しいスマートフォンは高いですが、写真がとてもきれいに撮れます。","Este smartphone novo é caro, mas tira fotos muito bonitas."],
+      ["日本語の発音は難しくないですが、長い文を自然に読む練習が必要です。","A pronúncia japonesa não é difícil, mas é preciso praticar frases longas."],
+      ["昨日買った安い傘は軽くて便利ですが、強い風の日には少し心配です。","O guarda-chuva barato que comprei é leve e prático, mas preocupa em vento forte."]
+    ]
+  },
+  {
+    level:"N5",
+    title:"な形容詞",
+    pattern:"静かな町・便利な店",
+    meaning:"adjetivos que usam な antes de substantivo",
+    formation:"な-adjetivo + な + substantivo; な-adjetivo + です.",
+    explanation:"な-adjetivos precisam de な antes de substantivo, mas não antes de です. Exemplo: 静かな町, 町は静かです.",
+    examples:[
+      ["京都には静かな道や有名なお寺がたくさんあります。","Em Kyoto há muitas ruas tranquilas e templos famosos."],
+      ["この駅は便利ですが、朝は人が多くてとても忙しいです。","Esta estação é conveniente, mas de manhã há muita gente e é muito movimentada."],
+      ["先生は親切な人なので、分からない文法を何度も説明してくれます。","O professor é gentil, então explica várias vezes a gramática que não entendemos."]
+    ]
+  },
+  {
+    level:"N5",
+    title:"ます形",
+    pattern:"食べます・行きます・します",
+    meaning:"forma polida do verbo",
+    formation:"Verbo na forma ます.",
+    explanation:"Usada em frases educadas no presente ou futuro. A negativa é ません e o passado é ました.",
+    examples:[
+      ["私は毎朝コーヒーを飲んでから、三十分ぐらい日本語を勉強します。","Todas as manhãs bebo café e depois estudo japonês por cerca de trinta minutos."],
+      ["明日は友達と駅で会って、新しい映画を見に行きます。","Amanhã vou encontrar um amigo na estação e ir ver um filme novo."],
+      ["週末には部屋を掃除して、来週の授業の準備をします。","No fim de semana limpo o quarto e preparo a aula da semana que vem."]
+    ]
+  },
+  {
+    level:"N5",
+    title:"ません／ました／ませんでした",
+    pattern:"行きません・行きました・行きませんでした",
+    meaning:"negativo e passado polido",
+    formation:"ます→ません; ます→ました; ます→ませんでした.",
+    explanation:"Formas básicas para negar, afirmar no passado e negar no passado em estilo polido.",
+    examples:[
+      ["昨日は雨が強かったので、私は学校へ行きませんでした。","Ontem choveu forte, então não fui à escola."],
+      ["先週、友達と日本料理の店へ行って、初めて天ぷらを食べました。","Na semana passada fui a um restaurante japonês com um amigo e comi tempurá pela primeira vez."],
+      ["今朝は忙しくて朝ご飯を食べませんでしたが、昼はたくさん食べました。","Hoje de manhã estava ocupado e não tomei café, mas almocei bastante."]
+    ]
+  },
+  {
+    level:"N5",
+    title:"て形",
+    pattern:"食べて・飲んで・行って",
+    meaning:"forma de conexão do verbo",
+    formation:"Verbo na forma て.",
+    explanation:"A forma て conecta ações, faz pedidos, cria expressões como ている, てもいい, てください, てから e muitas outras.",
+    examples:[
+      ["朝ご飯を食べて、歯を磨いて、八時に家を出ました。","Tomei café, escovei os dentes e saí de casa às oito."],
+      ["この漢字をノートに書いて、読み方を声に出して練習してください。","Escreva este kanji no caderno e pratique a leitura em voz alta."],
+      ["駅で友達に会ってから、一緒に新しいカフェへ行きました。","Depois de encontrar meu amigo na estação, fomos juntos a um café novo."]
+    ]
+  },
+  {
+    level:"N5",
+    title:"てください",
+    pattern:"Vてください",
+    meaning:"por favor, faça",
+    formation:"Verbo forma て + ください.",
+    explanation:"Usado para pedir algo de forma educada. Pode ser pedido simples, instrução ou orientação.",
+    examples:[
+      ["この文章を読んでから、分からない言葉に線を引いてください。","Leia este texto e depois sublinhe as palavras que não entender."],
+      ["明日の授業までに、N5の文法をもう一度復習してください。","Revise novamente a gramática N5 até a aula de amanhã."],
+      ["駅に着いたら、私に短いメッセージを送ってください。","Quando chegar à estação, envie-me uma mensagem curta."]
+    ]
+  },
+  {
+    level:"N5",
+    title:"てもいいです",
+    pattern:"Vてもいいです",
+    meaning:"pode fazer; tudo bem fazer",
+    formation:"Verbo forma て + もいいです.",
+    explanation:"Expressa permissão. Em pergunta, pede permissão: 〜てもいいですか.",
+    examples:[
+      ["授業が終わったら、この教室で少し自習してもいいです。","Depois da aula, você pode estudar um pouco nesta sala."],
+      ["すみません、この辞書を今日の午後まで借りてもいいですか。","Com licença, posso pegar este dicionário emprestado até esta tarde?"],
+      ["分からない問題があったら、友達に聞いてもいいですが、答えを写してはいけません。","Se houver uma questão que não entende, pode perguntar a um amigo, mas não deve copiar a resposta."]
+    ]
+  },
+  {
+    level:"N5",
+    title:"てはいけません",
+    pattern:"Vてはいけません",
+    meaning:"não pode; é proibido",
+    formation:"Verbo forma て + はいけません.",
+    explanation:"Expressa proibição. É comum em regras de escola, placas, instruções e avisos.",
+    examples:[
+      ["図書館では大きな声で話してはいけません。","Na biblioteca não se deve falar em voz alta."],
+      ["試験中にスマートフォンを見てはいけませんから、かばんの中に入れてください。","Durante a prova não se pode olhar o celular, então coloque-o na bolsa."],
+      ["この部屋では食べ物を食べてはいけませんが、水を飲んでもいいです。","Nesta sala não se pode comer, mas pode beber água."]
+    ]
+  },
+  {
+    level:"N5",
+    title:"ている",
+    pattern:"Vている",
+    meaning:"estar fazendo; estado resultante",
+    formation:"Verbo forma て + いる.",
+    explanation:"Indica ação em andamento ou resultado de uma ação. Também é usado para hábitos e estados como 結婚している.",
+    examples:[
+      ["今、弟は自分の部屋で音楽を聞きながら宿題をしています。","Agora meu irmão está fazendo a lição no quarto enquanto ouve música."],
+      ["駅の前に新しいビルが建っていて、夜になるととても明るいです。","Há um prédio novo em frente à estação e à noite fica muito iluminado."],
+      ["私は毎日日本語を勉強しているので、少しずつ長い文章が読めるようになりました。","Como estudo japonês todos os dias, aos poucos passei a ler textos longos."]
+    ]
+  },
+  {
+    level:"N5",
+    title:"ない形",
+    pattern:"食べない・行かない・しない",
+    meaning:"forma negativa simples",
+    formation:"Grupo 1: final -u vira -aない; grupo 2: る→ない; する→しない; 来る→来ない.",
+    explanation:"Base para muitas estruturas: ないでください, なければならない, なくてもいい, ないほうがいい.",
+    examples:[
+      ["今日は時間がないので、テレビを見ないで早く寝ます。","Hoje não tenho tempo, então vou dormir cedo sem ver televisão."],
+      ["分からない言葉があっても、すぐに翻訳しないで、まず文全体を読んでください。","Mesmo que haja palavras desconhecidas, não traduza logo; leia primeiro a frase inteira."],
+      ["明日は大切な試験があるので、夜遅くまで起きないほうがいいです。","Amanhã há uma prova importante, então é melhor não ficar acordado até tarde."]
+    ]
+  },
+  {
+    level:"N5",
+    title:"ないでください",
+    pattern:"Vないでください",
+    meaning:"por favor, não faça",
+    formation:"Verbo forma ない + でください.",
+    explanation:"Pedido educado para alguém não fazer algo. É mais suave que uma proibição direta.",
+    examples:[
+      ["この部屋では試験をしていますから、大きな声で話さないでください。","Há uma prova nesta sala, então por favor não fale alto."],
+      ["私のノートにはまだ大切なメモがありますから、捨てないでください。","Ainda há anotações importantes no meu caderno, então não jogue fora."],
+      ["駅に着く前に電車のドアの近くに立たないでください。","Antes de chegar à estação, por favor não fique perto da porta do trem."]
+    ]
+  },
+  {
+    level:"N5",
+    title:"ましょう",
+    pattern:"Vましょう",
+    meaning:"vamos; farei",
+    formation:"Raiz da forma ます + ましょう.",
+    explanation:"Usado para convite, sugestão ou decisão voluntária em estilo polido.",
+    examples:[
+      ["明日の朝、駅の前で会って、一緒に学校へ行きましょう。","Amanhã de manhã vamos nos encontrar em frente à estação e ir juntos para a escola."],
+      ["この文法は大切ですから、例文を作りながらもう一度練習しましょう。","Esta gramática é importante, então vamos praticar de novo criando frases."],
+      ["雨が強くなってきましたから、少しこの店で休みましょう。","A chuva está ficando forte, então vamos descansar um pouco nesta loja."]
+    ]
+  },
+  {
+    level:"N5",
+    title:"ませんか",
+    pattern:"Vませんか",
+    meaning:"não quer...?; vamos...?",
+    formation:"Verbo forma ます sem ます + ませんか.",
+    explanation:"Convite educado e suave. Em português, muitas vezes fica 'que tal...?' ou 'não quer...?'.",
+    examples:[
+      ["今度の日曜日に、駅の近くのカフェで一緒に日本語を勉強しませんか。","No próximo domingo, que tal estudarmos japonês juntos em um café perto da estação?"],
+      ["授業の後で、新しい映画を見に行きませんか。","Depois da aula, não quer ir ver um filme novo?"],
+      ["時間があれば、図書館で来週の発表の準備をしませんか。","Se tiver tempo, que tal prepararmos a apresentação da semana que vem na biblioteca?"]
+    ]
+  },
+  {
+    level:"N5",
+    title:"たい",
+    pattern:"Vますstem + たい",
+    meaning:"querer fazer",
+    formation:"Raiz da forma ます + たい.",
+    explanation:"Expressa desejo do próprio falante ou pergunta sobre desejo do interlocutor. Flexiona como い-adjetivo: 食べたくない.",
+    examples:[
+      ["日本へ行ったら、京都で古いお寺を見て、おいしい和菓子を食べたいです。","Quando eu for ao Japão, quero ver templos antigos em Kyoto e comer doces japoneses."],
+      ["来年までに日本語で長い文章を読めるようになりたいです。","Quero conseguir ler textos longos em japonês até o ano que vem."],
+      ["今日は疲れたので、家に帰って温かいお茶を飲みたいです。","Hoje estou cansado, então quero voltar para casa e beber chá quente."]
+    ]
+  },
+  {
+    level:"N5",
+    title:"たり〜たりする",
+    pattern:"Vたり Vたり する",
+    meaning:"fazer coisas como...",
+    formation:"Verbo passado informal + り + verbo passado informal + り + する.",
+    explanation:"Lista ações como exemplos, sem dizer que são as únicas ações realizadas.",
+    examples:[
+      ["週末は本を読んだり、音楽を聞いたり、近くの公園を散歩したりします。","No fim de semana leio livros, ouço música, passeio no parque e coisas assim."],
+      ["日本語の勉強では、漢字を書いたり、文法を復習したり、短い文章を読んだりしています。","Nos estudos de japonês, escrevo kanji, reviso gramática, leio textos curtos e assim por diante."],
+      ["旅行中は写真を撮ったり、地元の料理を食べたり、友達にお土産を買ったりしました。","Durante a viagem tirei fotos, comi comida local, comprei lembranças para amigos e coisas assim."]
+    ]
+  },
+
+  {
+    level:"N4",
+    title:"たことがある",
+    pattern:"Vたことがある",
+    meaning:"já ter feito",
+    formation:"Verbo forma た + ことがある.",
+    explanation:"Expressa experiência de vida. A forma negativa é 〜たことがない.",
+    examples:[
+      ["私は一度だけ京都へ行ったことがありますが、まだ奈良へ行ったことはありません。","Eu já fui a Kyoto uma vez, mas ainda nunca fui a Nara."],
+      ["日本語で長い手紙を書いたことがあるので、作文の宿題はあまり怖くありません。","Como já escrevi uma carta longa em japonês, a redação não me assusta muito."],
+      ["納豆を食べたことがない人は、最初に匂いにびっくりするかもしれません。","Quem nunca comeu natto talvez se assuste primeiro com o cheiro."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"たほうがいい",
+    pattern:"Vたほうがいい",
+    meaning:"é melhor fazer",
+    formation:"Verbo forma た + ほうがいい.",
+    explanation:"Usado para dar conselho. Para conselho negativo, usa-se Vないほうがいい.",
+    examples:[
+      ["明日は試験ですから、今日は早く寝たほうがいいです。","Amanhã é prova, então é melhor dormir cedo hoje."],
+      ["この文法はよく出ますから、例文を作って覚えたほうがいいです。","Esta gramática aparece muito, então é melhor memorizar criando frases."],
+      ["雨が強くなりそうですから、傘を持って行ったほうがいいと思います。","Parece que a chuva vai ficar forte, então acho melhor levar guarda-chuva."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"ないほうがいい",
+    pattern:"Vないほうがいい",
+    meaning:"é melhor não fazer",
+    formation:"Verbo forma ない + ほうがいい.",
+    explanation:"Conselho para evitar uma ação. É muito usado em saúde, estudos, regras e decisões pessoais.",
+    examples:[
+      ["明日は朝早いですから、今夜は遅くまでゲームをしないほうがいいです。","Amanhã é cedo, então é melhor não jogar até tarde hoje."],
+      ["この道は夜になると暗いので、一人で歩かないほうがいいと思います。","Esta rua fica escura à noite, então acho melhor não andar sozinho."],
+      ["分からない文法をそのままにしないほうがいいですから、先生に質問しましょう。","É melhor não deixar a gramática sem entender, então vamos perguntar ao professor."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"なければならない",
+    pattern:"Vなければならない",
+    meaning:"ter que; dever",
+    formation:"Verbo forma ない sem い + ければならない.",
+    explanation:"Expressa obrigação. É mais formal que なくちゃ e muito comum em explicações e regras.",
+    examples:[
+      ["明日の朝九時までに、作文を先生に出さなければなりません。","Tenho que entregar a redação ao professor até amanhã às nove."],
+      ["N4に合格したいなら、文法だけでなく読解も練習しなければなりません。","Se quiser passar no N4, precisa praticar não só gramática, mas também leitura."],
+      ["日本へ旅行する前に、パスポートの期限を確認しなければなりません。","Antes de viajar ao Japão, é preciso verificar a validade do passaporte."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"なくてもいい",
+    pattern:"Vなくてもいい",
+    meaning:"não precisa fazer",
+    formation:"Verbo forma ない sem い + くてもいい.",
+    explanation:"Expressa ausência de necessidade ou obrigação. É o contrário prático de なければならない.",
+    examples:[
+      ["この宿題は来週までですから、今日全部終わらなくてもいいです。","Esta lição é para semana que vem, então não precisa terminar tudo hoje."],
+      ["分からない漢字が少しあっても、辞書を使えば全部覚えなくてもいいです。","Mesmo que haja alguns kanji desconhecidos, usando dicionário não precisa memorizar todos."],
+      ["雨の日は体育館で授業をしますから、外へ行かなくてもいいです。","Em dias de chuva teremos aula no ginásio, então não precisa ir para fora."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"ことができる",
+    pattern:"V辞書形 + ことができる",
+    meaning:"poder; conseguir",
+    formation:"Verbo dicionário + ことができる.",
+    explanation:"Expressa habilidade ou possibilidade. É equivalente a uma forma potencial mais analítica.",
+    examples:[
+      ["毎日練習すれば、日本語で長い文章を読むことができるようになります。","Se praticar todos os dias, conseguirá ler textos longos em japonês."],
+      ["この図書館では、外国語の本を二週間借りることができます。","Nesta biblioteca é possível pegar livros estrangeiros emprestados por duas semanas."],
+      ["駅の近くで自転車を借りることができるので、町を簡単に見て回れます。","Como dá para alugar bicicleta perto da estação, é fácil passear pela cidade."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"ようになる",
+    pattern:"V辞書形／Vない + ようになる",
+    meaning:"passar a; tornar-se capaz de",
+    formation:"Verbo dicionário ou negativo + ようになる.",
+    explanation:"Indica mudança gradual de estado, hábito ou capacidade.",
+    examples:[
+      ["毎日音読していたら、日本語の長い文も自然に読めるようになりました。","Depois de ler em voz alta todos os dias, passei a ler frases longas naturalmente."],
+      ["日本のドラマを見ているうちに、簡単な会話が少し分かるようになりました。","Vendo dramas japoneses, passei a entender um pouco conversas simples."],
+      ["最近は夜遅くまでスマートフォンを見ないようになりました。","Recentemente passei a não olhar o celular até tarde da noite."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"ようにする",
+    pattern:"V辞書形／Vない + ようにする",
+    meaning:"procurar fazer; tentar manter hábito",
+    formation:"Verbo dicionário ou negativo + ようにする.",
+    explanation:"Expressa esforço consciente para criar ou evitar um hábito.",
+    examples:[
+      ["毎日少しでも日本語を聞くようにしています。","Procuro ouvir japonês todos os dias, nem que seja um pouco."],
+      ["授業で習った文法は、その日のうちに復習するようにしています。","Procuro revisar a gramática aprendida na aula no mesmo dia."],
+      ["健康のために、夜遅くに甘いものを食べないようにしています。","Pela saúde, procuro não comer doces tarde da noite."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"つもり",
+    pattern:"V辞書形／Vない + つもり",
+    meaning:"pretender; ter intenção",
+    formation:"Verbo dicionário ou negativo + つもりです.",
+    explanation:"Expressa intenção planejada. É mais decidido que たい, mas ainda fala de plano pessoal.",
+    examples:[
+      ["来年、日本へ旅行するつもりなので、今から会話を練習しています。","Pretendo viajar ao Japão no ano que vem, então já estou praticando conversação."],
+      ["試験が終わったら、新しい文法の本を買うつもりです。","Quando a prova terminar, pretendo comprar um novo livro de gramática."],
+      ["今週は忙しいので、週末まで友達と遊ばないつもりです。","Esta semana estou ocupado, então pretendo não sair com amigos até o fim de semana."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"予定",
+    pattern:"V辞書形／Nの + 予定",
+    meaning:"plano; programação",
+    formation:"Verbo dicionário + 予定; substantivo + の予定.",
+    explanation:"Indica um plano mais objetivo, agenda ou programação já definida.",
+    examples:[
+      ["来月の十日に、会社の会議で東京へ行く予定です。","No dia dez do mês que vem tenho plano de ir a Tóquio para uma reunião da empresa."],
+      ["明日の午後は図書館でN4の文法を復習する予定です。","Amanhã à tarde pretendo revisar gramática N4 na biblioteca."],
+      ["夏休みの予定はまだ決まっていませんが、日本語の勉強は続けるつもりです。","Ainda não decidi os planos das férias, mas pretendo continuar estudando japonês."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"と思う",
+    pattern:"Frase informal + と思う",
+    meaning:"acho que; penso que",
+    formation:"Frase em forma simples + と思います.",
+    explanation:"Introduz opinião, pensamento ou previsão. Para citação mais direta também se usa と言う.",
+    examples:[
+      ["この文法は最初は難しいですが、例文を読めば分かりやすいと思います。","Acho que esta gramática é difícil no começo, mas fica clara lendo exemplos."],
+      ["明日は雨が降ると思うので、傘を持って行ったほうがいいです。","Acho que amanhã vai chover, então é melhor levar guarda-chuva."],
+      ["毎日少しずつ勉強することが、JLPTの合格には一番大切だと思います。","Acho que estudar um pouco todos os dias é o mais importante para passar no JLPT."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"と言う",
+    pattern:"Frase + と言う",
+    meaning:"dizer que; chamar-se",
+    formation:"Frase/conteúdo + と言います.",
+    explanation:"Usado para citação, fala, nomes e definições.",
+    examples:[
+      ["先生は、文法は例文の中で覚えたほうがいいと言いました。","O professor disse que é melhor memorizar gramática dentro de frases."],
+      ["日本語でこの料理は『お好み焼き』と言います。","Em japonês, este prato se chama okonomiyaki."],
+      ["友達は明日忙しいから、授業の後で図書館へ行けないと言っていました。","Meu amigo disse que amanhã estará ocupado e não poderá ir à biblioteca depois da aula."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"かもしれない",
+    pattern:"Frase simples + かもしれない",
+    meaning:"talvez; pode ser que",
+    formation:"Verbo/adjetivo/substantivo em forma simples + かもしれません.",
+    explanation:"Expressa possibilidade incerta. É menos forte que でしょう ou と思う.",
+    examples:[
+      ["明日は雨が降るかもしれないので、かばんに小さい傘を入れておきます。","Talvez chova amanhã, então vou deixar um guarda-chuva pequeno na bolsa."],
+      ["この問題は少し難しいかもしれませんが、ゆっくり読めば分かります。","Esta questão talvez seja um pouco difícil, mas se ler devagar dá para entender."],
+      ["田中さんはもう駅に着いているかもしれないので、電話してみましょう。","Talvez Tanaka já tenha chegado à estação, então vamos ligar."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"でしょう",
+    pattern:"Frase simples + でしょう",
+    meaning:"provavelmente; não é?",
+    formation:"Forma simples + でしょう.",
+    explanation:"Expressa previsão ou confirmação suave. Em perguntas, pode pedir concordância.",
+    examples:[
+      ["明日は晴れるでしょうから、予定どおり遠足に行けると思います。","Provavelmente fará sol amanhã, então acho que poderemos fazer a excursão."],
+      ["この文法はN4でよく使われるでしょう。","Esta gramática provavelmente é muito usada no N4."],
+      ["駅まで歩いて十分ぐらいでしょう。","Até a estação deve levar cerca de dez minutos a pé."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"そうだ — parece",
+    pattern:"いadjそう／なadjそう／Vますstemそう",
+    meaning:"parece; está prestes a",
+    formation:"い-adj sem い + そう; な-adj + そう; raiz ます + そう.",
+    explanation:"Expressa impressão visual ou algo prestes a acontecer. Exemplo: おいしそう, 雨が降りそう.",
+    examples:[
+      ["このケーキはとてもおいしそうなので、一つ買って家で食べたいです。","Este bolo parece muito gostoso, então quero comprar um e comer em casa."],
+      ["空が暗くなってきて、今にも雨が降りそうです。","O céu está ficando escuro e parece que vai chover a qualquer momento."],
+      ["この問題は簡単そうに見えますが、よく読むと少し複雑です。","Esta questão parece fácil, mas ao ler bem é um pouco complexa."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"そうだ — ouvi dizer",
+    pattern:"Frase simples + そうだ",
+    meaning:"ouvi dizer que",
+    formation:"Frase em forma simples + そうです.",
+    explanation:"Relata informação recebida de outra fonte. Não é impressão visual, mas boato, notícia ou fala de alguém.",
+    examples:[
+      ["天気予報によると、明日は朝から強い雨が降るそうです。","Segundo a previsão do tempo, ouvi dizer que amanhã choverá forte desde manhã."],
+      ["先生の話では、来月から新しい学生が三人来るそうです。","Pelo que o professor disse, parece que três novos alunos virão no mês que vem."],
+      ["友達によると、この店のラーメンは安くてとてもおいしいそうです。","Segundo meu amigo, o ramen desta loja é barato e muito gostoso."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"ようだ",
+    pattern:"Frase simples + ようだ",
+    meaning:"parece que; como se",
+    formation:"Verbo/い-adj simples + ようだ; な-adj + なようだ; N + のようだ.",
+    explanation:"Expressa suposição baseada em evidências ou comparação semelhante a 'como'.",
+    examples:[
+      ["電気が消えているので、先生はもう帰ったようです。","Como a luz está apagada, parece que o professor já foi embora."],
+      ["この町は静かで、時間がゆっくり流れているようです。","Esta cidade é tranquila, como se o tempo passasse devagar."],
+      ["彼は日本人のように自然な発音で日本語を話します。","Ele fala japonês com pronúncia natural como um japonês."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"らしい",
+    pattern:"Frase simples + らしい",
+    meaning:"parece; ouvi dizer; típico de",
+    formation:"Forma simples + らしい.",
+    explanation:"Pode indicar informação ou característica típica. O contexto mostra se é 'parece que' ou 'bem típico de'.",
+    examples:[
+      ["天気予報では、今週末はとても寒くなるらしいです。","Segundo a previsão, parece que fará muito frio neste fim de semana."],
+      ["田中さんは毎日三時間勉強しているらしいです。","Parece que Tanaka estuda três horas todos os dias."],
+      ["彼は忙しくても約束を守るので、本当に彼らしいと思います。","Mesmo ocupado, ele cumpre promessas; isso é bem típico dele."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"のに",
+    pattern:"Frase simples + のに",
+    meaning:"embora; apesar de",
+    formation:"Verbo/い-adj simples + のに; な-adj/N + なのに.",
+    explanation:"Mostra contraste inesperado, muitas vezes com surpresa, insatisfação ou frustração.",
+    examples:[
+      ["たくさん勉強したのに、試験では緊張して簡単な問題を間違えました。","Embora eu tenha estudado muito, fiquei nervoso na prova e errei questões fáceis."],
+      ["この店は安いのに、料理がとてもおいしくて量も多いです。","Embora esta loja seja barata, a comida é muito gostosa e vem bastante."],
+      ["今日は日曜日なのに、父は朝から会社で働いています。","Embora hoje seja domingo, meu pai está trabalhando desde manhã."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"ので",
+    pattern:"Frase + ので",
+    meaning:"porque; como",
+    formation:"Verbo/い-adj + ので; な-adj/N + なので.",
+    explanation:"Indica causa ou razão de forma mais suave e objetiva que から.",
+    examples:[
+      ["明日は試験があるので、今日は早く帰って勉強します。","Como amanhã há prova, hoje vou voltar cedo para estudar."],
+      ["この部屋は静かなので、長い文章を読む練習にちょうどいいです。","Como este quarto é silencioso, é ideal para praticar leitura de textos longos."],
+      ["雨が強くなったので、駅までタクシーで行くことにしました。","Como a chuva ficou forte, decidi ir de táxi até a estação."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"し",
+    pattern:"Aし、Bし、それにC",
+    meaning:"e além disso; porque",
+    formation:"Frase simples + し.",
+    explanation:"Lista razões ou características, frequentemente com sentido de 'além disso'.",
+    examples:[
+      ["この町は静かだし、物価も安いし、住みやすいと思います。","Esta cidade é tranquila, os preços são baixos e acho fácil de morar."],
+      ["彼は日本語が上手だし、説明も分かりやすいので、みんなに人気があります。","Ele é bom em japonês e suas explicações são claras, por isso é popular."],
+      ["今日は雨も降っているし、風も強いし、外へ出たくありません。","Hoje está chovendo e ventando forte, então não quero sair."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"ながら",
+    pattern:"Vますstem + ながら",
+    meaning:"enquanto faz",
+    formation:"Raiz da forma ます + ながら.",
+    explanation:"Indica duas ações simultâneas feitas pelo mesmo sujeito.",
+    examples:[
+      ["私は毎朝コーヒーを飲みながら、日本語のニュースを聞いています。","Todas as manhãs ouço notícias em japonês enquanto bebo café."],
+      ["音楽を聞きながら勉強すると、私はあまり集中できません。","Quando estudo ouvindo música, não consigo me concentrar muito."],
+      ["母は夕食を作りながら、弟の学校の話を聞いていました。","Minha mãe ouvia as histórias da escola do meu irmão enquanto fazia o jantar."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"てから",
+    pattern:"Vてから",
+    meaning:"depois de fazer",
+    formation:"Verbo forma て + から.",
+    explanation:"Marca sequência clara: primeiro uma ação, depois outra.",
+    examples:[
+      ["宿題を終わってから、友達とオンラインでゲームをしました。","Depois de terminar a lição, joguei online com um amigo."],
+      ["日本語の文を読んでから、分からない単語を辞書で調べます。","Depois de ler a frase japonesa, procuro as palavras que não entendo no dicionário."],
+      ["駅に着いてから、先生に電話して集合場所を確認しました。","Depois de chegar à estação, liguei para o professor e confirmei o ponto de encontro."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"前に／後で",
+    pattern:"V辞書形前に／Vた後で",
+    meaning:"antes de; depois de",
+    formation:"Verbo dicionário + 前に; verbo forma た + 後で.",
+    explanation:"前に usa verbo no dicionário porque a ação ainda não aconteceu. 後で usa forma た porque a ação já foi concluída.",
+    examples:[
+      ["寝る前に、明日の授業で使う教科書をかばんに入れておきます。","Antes de dormir, coloco na bolsa o livro que usarei na aula de amanhã."],
+      ["晩ご飯を食べた後で、三十分ぐらい漢字を練習しました。","Depois de jantar, pratiquei kanji por cerca de trinta minutos."],
+      ["日本へ行く前に、簡単な会話表現を覚えておいたほうがいいです。","Antes de ir ao Japão, é melhor memorizar expressões simples de conversação."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"間／間に",
+    pattern:"Vている間／Nの間に",
+    meaning:"durante; enquanto",
+    formation:"Verbo ている + 間; substantivo + の間; com 間に, algo acontece dentro do período.",
+    explanation:"間 indica duração inteira; 間に indica que algo acontece em algum momento dentro do período.",
+    examples:[
+      ["母が買い物をしている間、私は家で弟の宿題を手伝いました。","Enquanto minha mãe fazia compras, ajudei meu irmão com a lição em casa."],
+      ["夏休みの間に、日本語の文法を全部復習するつもりです。","Durante as férias de verão, pretendo revisar toda a gramática japonesa."],
+      ["電車に乗っている間、スマートフォンで漢字のアプリを使っていました。","Enquanto estava no trem, usei um aplicativo de kanji no celular."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"ても",
+    pattern:"Vても／いadjくても／なadjでも",
+    meaning:"mesmo que; ainda que",
+    formation:"Forma て + も.",
+    explanation:"Indica concessão: mesmo que uma condição aconteça, o resultado não muda.",
+    examples:[
+      ["雨が降っても、明日の試合は予定どおり行われます。","Mesmo que chova, o jogo de amanhã acontecerá como planejado."],
+      ["この文法は難しくても、何度も例文を読めば少しずつ分かります。","Mesmo que esta gramática seja difícil, lendo exemplos várias vezes dá para entender aos poucos."],
+      ["忙しくても、毎日十分だけ日本語を勉強するようにしています。","Mesmo ocupado, procuro estudar japonês dez minutos todos os dias."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"たら",
+    pattern:"Vたら／いadjかったら／なadjだったら",
+    meaning:"se; quando",
+    formation:"Forma passada informal + ら.",
+    explanation:"Expressa condição ou sequência temporal. Pode significar 'se' ou 'quando/depois que'.",
+    examples:[
+      ["宿題が終わったら、駅の近くのカフェで一緒に休みましょう。","Quando terminar a lição, vamos descansar juntos no café perto da estação."],
+      ["明日雨だったら、遠足は来週に変わるかもしれません。","Se amanhã chover, a excursão talvez mude para semana que vem."],
+      ["日本語で分からない言葉があったら、すぐに先生に質問してください。","Se houver uma palavra em japonês que você não entende, pergunte logo ao professor."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"ば",
+    pattern:"行けば・食べれば・安ければ",
+    meaning:"se",
+    formation:"Verbo condicional ば; い-adj い→ければ; な-adj/N + なら.",
+    explanation:"Expressa condição geral, lógica ou necessária. Muito comum em conselhos e explicações.",
+    examples:[
+      ["毎日少しずつ勉強すれば、難しい文法も自然に覚えられます。","Se estudar um pouco todos os dias, conseguirá memorizar naturalmente até gramática difícil."],
+      ["時間があれば、授業の後で図書館へ行って作文を書きます。","Se eu tiver tempo, depois da aula vou à biblioteca escrever a redação."],
+      ["この店が安ければ、友達にも紹介したいです。","Se esta loja for barata, quero apresentá-la aos meus amigos também."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"なら",
+    pattern:"Nなら／fraseなら",
+    meaning:"se for; quanto a",
+    formation:"Substantivo/frase + なら.",
+    explanation:"Usado para responder a um tópico apresentado ou fazer condição com base em informação do interlocutor.",
+    examples:[
+      ["日本語の辞書なら、図書館の二階にたくさんあります。","Se for dicionário de japonês, há muitos no segundo andar da biblioteca."],
+      ["京都へ行くなら、朝早く出発したほうがいいです。","Se for a Kyoto, é melhor sair cedo de manhã."],
+      ["N4の文法なら、この本が分かりやすくておすすめです。","Se for gramática N4, este livro é claro e recomendo."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"かどうか",
+    pattern:"Frase + かどうか",
+    meaning:"se; se ou não",
+    formation:"Forma simples + かどうか.",
+    explanation:"Usado quando a pergunta embutida é de sim/não.",
+    examples:[
+      ["明日雨が降るかどうか、寝る前に天気予報を確認します。","Antes de dormir vou verificar a previsão para saber se choverá amanhã."],
+      ["この漢字を試験で使うかどうか、先生に聞いてみましょう。","Vamos perguntar ao professor se este kanji será usado na prova."],
+      ["駅の近くに安いホテルがあるかどうか、インターネットで調べました。","Pesquisei na internet se havia hotel barato perto da estação."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"疑問詞 + か",
+    pattern:"何か・誰か・どこか",
+    meaning:"algo; alguém; algum lugar",
+    formation:"Interrogativo + か.",
+    explanation:"Transforma palavras interrogativas em indefinidas: 何か algo, 誰か alguém, どこか algum lugar.",
+    examples:[
+      ["お腹がすいたので、駅の近くで何か温かいものを食べたいです。","Estou com fome, quero comer algo quente perto da estação."],
+      ["誰か日本語の発音をチェックしてくれる人を探しています。","Procuro alguém que verifique minha pronúncia japonesa."],
+      ["休みの日には、静かなどこかで本を読みたいです。","No dia de folga, quero ler um livro em algum lugar tranquilo."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"疑問詞 + も + negativo",
+    pattern:"何も〜ない／誰も〜ない",
+    meaning:"nada; ninguém; nenhum",
+    formation:"Interrogativo + も + verbo negativo.",
+    explanation:"Com verbo negativo, cria sentido absoluto negativo.",
+    examples:[
+      ["忙しすぎて、朝から何も食べていないので、少し休みたいです。","Estou tão ocupado que não comi nada desde manhã e quero descansar um pouco."],
+      ["教室には誰もいなかったので、私は受付で先生の場所を聞きました。","Não havia ninguém na sala, então perguntei na recepção onde estava o professor."],
+      ["昨日は疲れていて、家に帰ってから何も勉強しませんでした。","Ontem eu estava cansado e não estudei nada depois de voltar para casa."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"という",
+    pattern:"N という N",
+    meaning:"chamado; que se chama",
+    formation:"Nome/frase + という + substantivo.",
+    explanation:"Usado para apresentar nomes, títulos, termos e explicações: 〜という本, 〜という意味.",
+    examples:[
+      ["『みんなの日本語』という教科書を使って、初級の文法を勉強しています。","Estudo gramática básica usando um livro chamado Minna no Nihongo."],
+      ["『いただきます』という表現は、食事の前に使う大切なあいさつです。","A expressão itadakimasu é um cumprimento importante usado antes da refeição."],
+      ["先生は『継続は力なり』という言葉の意味を分かりやすく説明しました。","O professor explicou de forma clara o significado da expressão 'continuidade vira força'."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"さ — substantivar adjetivo",
+    pattern:"高さ・静かさ・便利さ",
+    meaning:"-dade; grau; medida",
+    formation:"い-adj: い→さ; な-adj + さ.",
+    explanation:"Transforma adjetivos em substantivos de grau, medida ou qualidade: 高さ, 便利さ, 面白さ.",
+    examples:[
+      ["この山の高さは三千メートル以上で、頂上からの景色はとてもきれいです。","A altura desta montanha passa de três mil metros e a vista do topo é muito bonita."],
+      ["日本語の面白さは、短い表現の中にも細かい気持ちが入ることだと思います。","Acho que o interessante do japonês é que até expressões curtas carregam sentimentos sutis."],
+      ["このアプリの便利さを知ってから、毎日の復習が楽になりました。","Depois de conhecer a praticidade deste aplicativo, a revisão diária ficou mais fácil."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"受身形 — passiva",
+    pattern:"言われる・作られる",
+    meaning:"ser feito; receber ação",
+    formation:"Grupo 1: -u→-areru; grupo 2: る→られる; する→される; 来る→来られる.",
+    explanation:"Mostra que o sujeito recebe a ação. Também pode expressar incômodo quando algo afeta negativamente o falante.",
+    examples:[
+      ["この古いお寺は三百年前に建てられたと言われています。","Dizem que este templo antigo foi construído há trezentos anos."],
+      ["電車の中で隣の人に足を踏まれて、とても痛かったです。","No trem, meu pé foi pisado pela pessoa ao lado e doeu muito."],
+      ["この歌は多くの国で歌われていて、日本語を勉強する人にも人気があります。","Esta música é cantada em muitos países e também é popular entre estudantes de japonês."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"使役形 — causativa",
+    pattern:"食べさせる・行かせる",
+    meaning:"fazer/deixar alguém fazer",
+    formation:"Grupo 1: -u→-aseru; grupo 2: る→させる; する→させる; 来る→来させる.",
+    explanation:"Expressa que alguém causa, manda ou permite que outra pessoa faça algo.",
+    examples:[
+      ["母は弟に宿題を終わらせてからゲームをさせました。","Minha mãe deixou meu irmão jogar depois de fazê-lo terminar a lição."],
+      ["先生は学生に新しい文法を使って長い例文を作らせました。","O professor fez os alunos criarem frases longas usando a gramática nova."],
+      ["子どもが疲れていたので、父は少し休ませてから家に帰りました。","A criança estava cansada, então o pai a deixou descansar um pouco antes de voltar para casa."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"出す／始める／終わる／続ける",
+    pattern:"Vますstem + 出す/始める/終わる/続ける",
+    meaning:"começar; terminar; continuar",
+    formation:"Raiz da forma ます + verbo auxiliar.",
+    explanation:"Cria verbos compostos: 降り出す = começar a chover; 勉強し始める = começar a estudar; 書き終わる = terminar de escrever.",
+    examples:[
+      ["授業が終わって駅へ向かっていると、急に雨が降り出しました。","Quando eu ia para a estação depois da aula, começou a chover de repente."],
+      ["去年の春から日本語を勉強し始めて、今はN4の文法を復習しています。","Comecei a estudar japonês na primavera passada e agora reviso gramática N4."],
+      ["作文を書き終わったら、間違いがないかもう一度読み返してください。","Quando terminar de escrever a redação, releia para ver se não há erros."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"がする",
+    pattern:"音／匂い／味 がする",
+    meaning:"ter som; cheiro; gosto",
+    formation:"Substantivo de percepção + がする.",
+    explanation:"Usado para sons, cheiros, sabores, sensações e impressões: 音がする, 匂いがする, 変な感じがする.",
+    examples:[
+      ["台所からいい匂いがするので、母が晩ご飯を作っていると思います。","Vem um cheiro bom da cozinha, então acho que minha mãe está fazendo jantar."],
+      ["外で大きな音がしたので、みんな驚いて窓のほうを見ました。","Houve um som alto lá fora, então todos se assustaram e olharam para a janela."],
+      ["このスープは少し変な味がしますから、飲まないほうがいいかもしれません。","Esta sopa tem um gosto um pouco estranho, então talvez seja melhor não beber."]
+    ]
+  },
+  {
+    level:"N4",
+    title:"必要がある／必要だ",
+    pattern:"V必要がある／Nが必要だ",
+    meaning:"é necessário",
+    formation:"Verbo dicionário + 必要がある; N が必要だ.",
+    explanation:"Expressa necessidade objetiva. Muito útil em regras, estudos, trabalho e explicações.",
+    examples:[
+      ["N4に合格するためには、文法を覚えるだけでなく、文章の中で使う練習をする必要があります。","Para passar no N4, é necessário não só memorizar gramática, mas praticá-la em frases."],
+      ["海外へ行く前に、パスポートとビザが必要かどうか確認してください。","Antes de ir ao exterior, confirme se passaporte e visto são necessários."],
+      ["この仕事には、正確にメールを書く力が必要です。","Neste trabalho, é necessária a habilidade de escrever e-mails com precisão."]
+    ]
+  }
+];
+
+const EXTRA = [
+  ["N5","時間に","Tempo に","em tal horário","Tempo específico + に.","Marca hora, data ou momento específico.","私は毎朝七時に起きて、八時半に学校へ行きます。","Acordo às sete todos os dias e vou para a escola às oito e meia."],
+  ["N5","で — meio","Nで行く／Nで書く","de; com; por meio de","Meio/ferramenta + で.","Marca meio de transporte, instrumento ou método.","私は毎日バスで学校へ行って、鉛筆で漢字を練習します。","Vou para a escola de ônibus todos os dias e pratico kanji com lápis."],
+  ["N5","一番","Aが一番〜","o mais","Grupo + で + A が一番 + adjetivo.","Usado para superlativo dentro de um grupo.","このクラスで田中さんが一番日本語を読むのが上手です。","Nesta turma, Tanaka é quem lê japonês melhor."],
+  ["N5","より","AはBより〜","mais que","A は B より + adjetivo.","Compara duas coisas, dizendo que A tem mais certa qualidade que B.","東京は私の町より人が多くて、電車もずっと便利です。","Tóquio tem mais gente que minha cidade e os trens são muito mais convenientes."],
+  ["N5","ほど〜ない","AはBほど〜ない","não tão quanto","A は B ほど + negativo.","Compara dizendo que A não chega ao grau de B.","今日は昨日ほど寒くないので、コートを着なくてもいいです。","Hoje não está tão frio quanto ontem, então não preciso usar casaco."],
+  ["N5","もう","もうVました","já","もう + verbo passado/afirmativo.","Indica que algo já aconteceu ou já está em certo estado.","宿題はもう終わりましたから、これから少し休みます。","A lição já terminou, então agora vou descansar um pouco."],
+  ["N5","まだ","まだVていません","ainda não","まだ + negativo.","Indica que algo ainda não aconteceu.","朝から忙しくて、昼ご飯をまだ食べていません。","Estou ocupado desde manhã e ainda não almocei."],
+  ["N5","あまり〜ない","あまり + negativo","não muito","あまり + verbo/adjetivo negativo.","Expressa intensidade baixa em frases negativas.","この映画は有名ですが、私はあまり面白いと思いませんでした。","Este filme é famoso, mas eu não achei muito interessante."],
+  ["N5","とても","とても + adjetivo","muito","とても + adjetivo.","Intensificador simples e muito comum.","この図書館はとても静かなので、長い時間勉強できます。","Esta biblioteca é muito silenciosa, então dá para estudar por muito tempo."],
+  ["N5","ほしい","Nがほしい","querer algo","Substantivo + が + ほしい.","Expressa desejo de possuir algo.","私は日本語の文法が詳しく説明されている新しい本がほしいです。","Quero um livro novo que explique detalhadamente gramática japonesa."],
+  ["N5","好き／嫌い","Nが好き／嫌い","gostar; não gostar","Substantivo + が + 好き/嫌い.","Expressa gosto ou preferência.","私は漢字を書くのは大変ですが、日本語を勉強することが好きです。","Escrever kanji é trabalhoso, mas gosto de estudar japonês."],
+  ["N5","上手／下手","Nが上手／下手","ser bom/ruim em","Substantivo + が + 上手/下手.","Expressa habilidade avaliada.","妹は歌が上手ですが、人の前で歌うのは少し恥ずかしいそうです。","Minha irmã canta bem, mas parece ter vergonha de cantar na frente dos outros."],
+  ["N5","から — causa","Frase + から","porque","Frase + から.","Indica razão ou causa de modo direto.","今日は頭が痛いから、早く帰って休みたいです。","Hoje minha cabeça dói, por isso quero voltar cedo e descansar."],
+  ["N5","でも","Nでも／frase。でも","mas; até mesmo","Usado como conjunção ou partícula.","Liga contraste ou apresenta exemplo mínimo.","この本は古いです。でも、説明が分かりやすいので今も使っています。","Este livro é antigo. Mas como a explicação é clara, ainda o uso."],
+  ["N5","そして","A。そしてB","e então; além disso","Conjunção entre frases.","Liga informações em sequência ou acréscimo.","朝ご飯を食べました。そして、駅まで歩いて学校へ行きました。","Tomei café. E então caminhei até a estação e fui para a escola."],
+  ["N5","それから","A。それからB","depois disso","Conjunção de sequência.","Mostra ordem temporal entre ações.","図書館で二時間勉強しました。それから、友達と晩ご飯を食べました。","Estudei duas horas na biblioteca. Depois disso, jantei com um amigo."],
+  ["N5","でしょうか","〜でしょうか","será que...?","Forma polida de pergunta indireta.","Pergunta suave, mais formal que ですか.","この電車は新宿駅に止まるでしょうか。","Será que este trem para na estação de Shinjuku?"],
+
+  ["N4","ばかり","Nばかり／Vてばかりいる","só; apenas; ficar fazendo","Substantivo + ばかり; Vて + ばかりいる.","Indica repetição excessiva ou concentração em uma coisa.","弟は休みの日にゲームをしてばかりいるので、母に注意されました。","Meu irmão só fica jogando nos dias de folga, então minha mãe chamou a atenção dele."],
+  ["N4","すぎる","Vますstem/adj + すぎる","demais","Raiz ます + すぎる; い-adj sem い + すぎる; な-adj + すぎる.","Indica excesso.","昨日はコーヒーを飲みすぎて、夜なかなか眠れませんでした。","Ontem bebi café demais e não consegui dormir à noite."],
+  ["N4","やすい","Vますstem + やすい","fácil de fazer","Raiz ます + やすい.","Indica que uma ação é fácil de realizar.","この先生の説明は分かりやすいので、難しい文法も安心して勉強できます。","A explicação deste professor é fácil de entender, então dá para estudar gramática difícil com tranquilidade."],
+  ["N4","にくい","Vますstem + にくい","difícil de fazer","Raiz ます + にくい.","Indica que uma ação é difícil de realizar.","この漢字は形が複雑で覚えにくいですが、何度も書けば慣れます。","Este kanji tem forma complexa e é difícil de memorizar, mas você se acostuma escrevendo várias vezes."],
+  ["N4","てしまう","Vてしまう","acabar fazendo; completar","Forma て + しまう.","Pode indicar conclusão completa ou arrependimento.","大切なプリントを家に忘れてしまったので、先生に説明しました。","Acabei esquecendo o material importante em casa, então expliquei ao professor."],
+  ["N4","ておく","Vておく","fazer de antemão","Forma て + おく.","Indica preparação para o futuro ou manutenção de estado.","明日の朝は忙しいので、今夜のうちにかばんを準備しておきます。","Amanhã de manhã estarei ocupado, então vou deixar a bolsa preparada hoje à noite."],
+  ["N4","てみる","Vてみる","tentar fazer","Forma て + みる.","Indica experimentar uma ação.","この表現は便利そうなので、会話の中で一度使ってみたいです。","Esta expressão parece útil, então quero tentar usá-la uma vez em conversa."],
+  ["N4","てもらう","人にVてもらう","receber favor","Pessoa に + Vて + もらう.","Mostra que alguém faz algo em benefício do sujeito.","私は友達に作文を読んでもらって、間違いを直しました。","Pedi a um amigo para ler minha redação e corrigi os erros."],
+  ["N4","てくれる","人がVてくれる","alguém faz por mim","Pessoa が + Vて + くれる.","Mostra que alguém faz algo em benefício do falante ou grupo do falante.","先生は授業の後で、難しい文法をもう一度説明してくれました。","O professor explicou novamente a gramática difícil depois da aula."],
+  ["N4","てあげる","人にVてあげる","fazer por alguém","Pessoa に + Vて + あげる.","Mostra que o sujeito faz algo em benefício de outra pessoa.","私は弟に漢字の読み方を教えてあげました。","Ensinei ao meu irmão a leitura dos kanji."],
+  ["N4","ことにする","V辞書形/ない + ことにする","decidir fazer","Verbo dicionário ou negativo + ことにする.","Expressa decisão tomada pelo próprio sujeito.","毎日寝る前に日本語を十分だけ読むことにしました。","Decidi ler japonês dez minutos antes de dormir todos os dias."],
+  ["N4","ことになる","V辞書形/ない + ことになる","ficar decidido que","Verbo dicionário ou negativo + ことになる.","Expressa decisão ou resultado decidido por situação externa.","来月から新しい先生に日本語を習うことになりました。","Ficou decidido que a partir do mês que vem vou estudar japonês com um novo professor."],
+  ["N4","はずだ","Frase + はずだ","deve ser; era esperado","Forma simples + はずだ.","Expressa expectativa lógica baseada em informação.","田中さんは朝八時に家を出たので、もう駅に着いているはずです。","Tanaka saiu de casa às oito, então já deve ter chegado à estação."],
+  ["N4","はずがない","Frase + はずがない","não há como; impossível","Forma simples + はずがない.","Expressa forte negação de possibilidade lógica.","毎日練習している彼が、この簡単な問題を間違えるはずがありません。","Não há como ele, que pratica todos os dias, errar esta questão simples."],
+  ["N4","ように言う","V辞書形/ない + ように言う","dizer para fazer/não fazer","Verbo + ように言う.","Relata instrução indireta.","先生は学生に、試験の日は早く来るように言いました。","O professor disse aos alunos para virem cedo no dia da prova."],
+  ["N4","ように頼む","V辞書形/ない + ように頼む","pedir para","Verbo + ように頼む.","Relata pedido indireto.","私は友達に、明日の朝電話してくれるように頼みました。","Pedi ao meu amigo para me ligar amanhã de manhã."],
+  ["N4","ために","V辞書形/Nの + ために","para; por causa de","Verbo dicionário + ために; Nの + ために.","Indica objetivo ou causa.","N4に合格するために、毎日文法と読解を練習しています。","Para passar no N4, pratico gramática e leitura todos os dias."],
+  ["N4","ところ","V辞書形ところ／Vているところ／Vたところ","prestes a; no meio de; acabou de","Forma do verbo + ところ.","Mostra fase da ação.","今から宿題を始めるところなので、後で電話してもいいですか。","Estou prestes a começar a lição agora, posso ligar depois?"],
+  ["N4","ているところ","Vているところ","estar no meio de","Forma ている + ところ.","Indica ação em progresso exatamente no momento.","今、先生にメールを書いているところですから、少し待ってください。","Estou no meio de escrever um e-mail ao professor agora, então espere um pouco."],
+  ["N4","たところ","Vたところ","acabei de fazer","Forma た + ところ.","Indica que uma ação acabou de ser concluída.","今、駅に着いたところなので、あと五分で教室に行けます。","Acabei de chegar à estação, então consigo ir à sala em cinco minutos."],
+  ["N4","かた","Vますstem + 方","modo de fazer","Raiz da forma ます + 方.","Transforma verbo em 'modo de fazer'.","この漢字の書き方が分からないので、先生にもう一度聞きました。","Não entendi como escrever este kanji, então perguntei novamente ao professor."],
+  ["N4","られる — potencial","食べられる・来られる","poder; conseguir","Grupo 2: る→られる; 来る→来られる. Grupo 1 geralmente usa -eru.","Expressa habilidade ou possibilidade.","私は最近、日本語のニュースを少し読めるようになりました。","Recentemente passei a conseguir ler um pouco notícias em japonês."],
+  ["N4","命令形","行け・食べろ・しろ","ordem direta","Formas imperativas dos verbos.","Forma forte, usada em ordens, avisos, torcida ou linguagem masculina dura.","危ない場所には入るな、すぐこちらへ来いと警察官が言いました。","O policial disse: não entre no lugar perigoso, venha para cá agora."],
+  ["N4","なさい","Vますstem + なさい","faça","Raiz da forma ます + なさい.","Ordem/instrução usada por pais, professores ou superiores.","試験の問題をよく読んでから、答えを選びなさい。","Leia bem as questões da prova e depois escolha a resposta."],
+  ["N4","Vるな","V辞書形 + な","não faça","Verbo dicionário + な.","Proibição direta e forte.","危ないから、工事中の場所には入るなと書いてあります。","Está escrito para não entrar na obra porque é perigoso."],
+  ["N4","敬語 básico","いらっしゃる・いたす・ございます","respeito formal","Verbos especiais honoríficos/humildes.","Forma básica de linguagem respeitosa.","先生は今、職員室にいらっしゃいますから、質問があれば行ってみてください。","O professor está na sala dos professores, então vá se tiver perguntas."]
+];
+
+for(const e of EXTRA){
+  GRAMMAR.push({
+    level:e[0],
+    title:e[1],
+    pattern:e[2],
+    meaning:e[3],
+    formation:e[4],
+    explanation:e[5],
+    examples:[
+      [e[6],e[7]],
+      ["この文法を覚えるために、私は毎日長い例文を声に出して読んでいます。","Para memorizar esta gramática, leio frases longas em voz alta todos os dias."],
+      ["試験で自然に使えるように、ノートに自分の生活についての例文を書いてください。","Para conseguir usar naturalmente na prova, escreva no caderno frases sobre sua própria vida."]
+    ]
+  });
+}
+
+let openAll = false;
+
+const $ = s => document.querySelector(s);
+
+function esc(s){
+  return String(s).replace(/[&<>"']/g, m => ({
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    "\"":"&quot;",
+    "'":"&#039;"
+  }[m]));
+}
+
+function norm(s){
+  return String(s)
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g,"");
+}
+
+function searchText(g){
+  return norm([
+    g.level,
+    g.title,
+    g.pattern,
+    g.meaning,
+    g.formation,
+    g.explanation,
+    ...g.examples.flat()
+  ].join(" "));
+}
+
+function card(g){
+  return `
+    <article class="card">
+      <span class="pill ${g.level}">${g.level}</span>
+      <span class="pill">${esc(g.meaning)}</span>
+      <h2>${esc(g.title)}</h2>
+
+      <div class="label">Padrão</div>
+      <div class="pattern">${esc(g.pattern)}</div>
+
+      <div class="label">Formação</div>
+      <p>${esc(g.formation)}</p>
+
+      <div class="label">Explicação</div>
+      <p>${esc(g.explanation)}</p>
+
+      <details ${openAll ? "open" : ""}>
+        <summary>Ver frases longas com tradução</summary>
+        <ul>
+          ${g.examples.map((e,i)=>`
+            <li>
+              <div class="jp">${i+1}. ${esc(e[0])}</div>
+              <div class="pt">${esc(e[1])}</div>
+            </li>
+          `).join("")}
+        </ul>
+      </details>
+    </article>
+  `;
+}
+
+function render(){
+  const q = norm($("#q").value);
+  const lv = $("#level").value;
+
+  const arr = GRAMMAR.filter(g => {
+    const okLevel = lv === "all" || g.level === lv;
+    const okSearch = !q || searchText(g).includes(q);
+    return okLevel && okSearch;
+  });
+
+  $("#cards").innerHTML = arr.map(card).join("");
+  $("#result").textContent = `${arr.length} estrutura(s) encontrada(s).`;
+}
+
+$("#total").textContent = GRAMMAR.length;
+$("#n5").textContent = GRAMMAR.filter(g=>g.level==="N5").length;
+$("#n4").textContent = GRAMMAR.filter(g=>g.level==="N4").length;
+
+$("#q").addEventListener("input", render);
+$("#level").addEventListener("change", render);
+
+$("#toggle").addEventListener("click", () => {
+  openAll = !openAll;
+  $("#toggle").textContent = openAll ? "Fechar exemplos" : "Abrir exemplos";
+  render();
+});
+
+$("#copy").addEventListener("click", async () => {
+  try{
+    await navigator.clipboard.writeText(JSON.stringify(GRAMMAR,null,2));
+    alert("Dados copiados.");
+  }catch(e){
+    alert("Não foi possível copiar automaticamente.");
+  }
+});
+
+render();
+</script>
+</body>
+</html>
